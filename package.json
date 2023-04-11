@@ -1,0 +1,14 @@
+{
+  "name": "practice.node-with-xml",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:marcopollivier/practice.node-with-xml.git",
+  "author": "Marco Ollivier <marcopollivier@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "xmlbuilder2": "^3.0.2"
+  }
+}
