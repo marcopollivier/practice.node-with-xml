@@ -1,0 +1,39 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+               xmlns:tns="http://wms2.marcopollivier.dev/soap/webservice.xpto"
+               xmlns:types="http://wms2.marcopollivier.dev/soap/webservice.xpto/encodedTypes"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+               
+	<soap:Body soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+			
+        <!-- Cadastra Livros - Requisição -->
+        <tns:CadastraLivros id="id1" xsi:type="tns:CadastraLivros">
+			<LivrosArray href="#id2"/>
+		</tns:CadastraLivros>
+		
+        <!-- Livros - Array -->
+        <soapenc:Array id="id2" soapenc:arrayType="tns:Livro[1]">
+			<Item href="#id3"/>
+		</soapenc:Array>
+		
+        <!-- Livros - Array -->
+        <tns:Livro id="id3" xsi:type="tns:Livro">
+			<Pedido xsi:type="xsd:string">O Conde de Monte Cristo</Pedido>
+
+			<ExemplaresArray href="#id4"/>
+		</tns:Livro>
+		
+        <!-- Exemplares - Array -->
+        <soapenc:Array id="id4" soapenc:arrayType="tns:Exemplar[1]">
+			<Item href="#id5"/>
+		</soapenc:Array>
+		
+        <!-- Exemplar -->
+        <tns:Exemplar id="id5" xsi:type="tns:Exemplar">
+			<Quantidade xsi:type="xsd:nonNegativeInteger">5</Quantidade>
+            <AnoEdicao xsi:type="xsd:string">2022</Pedido>
+		</tns:Exemplar>
+
+	</soap:Body>
+</soap:Envelope>
